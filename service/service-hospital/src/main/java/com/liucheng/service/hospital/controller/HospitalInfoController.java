@@ -37,15 +37,15 @@ public class HospitalInfoController {
     }
 
     @DeleteMapping("removeHospitalInfo/{id}")
-    public Result removeHospitalInfo(@PathVariable(value = "id")long id){
+    public Result removeHospitalInfo(@PathVariable(value = "id")Long id){
         boolean b = hospitalInfoService.removeById(id);
         if(b)return Result.success(ResultCodeEnum.REMOVE_SUCCESS,null);
         return Result.error(ResultCodeEnum.REMOVE_FAILED,null);
     }
 
     @PostMapping("findPageHospitalInfo/{current}/{size}")
-    public Result findPageHospitalInfo(@PathVariable(value = "current")long current,
-                                       @PathVariable(value = "size")long size,
+    public Result findPageHospitalInfo(@PathVariable(value = "current")Long current,
+                                       @PathVariable(value = "size")Long size,
                                        @RequestBody HospitalInfoQueryVO hospitalInfoQueryVO){
 //        创建Page对象
         Page<HospitalInfo> page = new Page<>(current, size);
@@ -86,7 +86,7 @@ public class HospitalInfoController {
     }
 
     @GetMapping("findHospitalInfoById/{id}")
-    public Result findHospitalInfoById(@PathVariable(value = "id")long id){
+    public Result findHospitalInfoById(@PathVariable(value = "id")Long id){
         HospitalInfo hospitalInfo = hospitalInfoService.getById(id);
         return Result.success(ResultCodeEnum.FIND_SUCCESS,hospitalInfo);
     }
@@ -102,5 +102,15 @@ public class HospitalInfoController {
     public Result batchRemoveHospitalInfo(@RequestBody List<Long> idList){
         hospitalInfoService.removeBatchByIds(idList);
         return Result.success(ResultCodeEnum.BATCH_REMOVE_SUCCESS,null);
+    }
+
+//    医院设置锁定和解锁
+    @PutMapping("lockHospitalInfo/{id}/{status}")
+    public Result lockHospitalInfo(@PathVariable(value = "id")Long id,
+                                   @PathVariable(value = "status")Integer status){
+        HospitalInfo hospitalInfo = hospitalInfoService.getById(id);
+        hospitalInfo.setStatus(status);
+        hospitalInfoService.updateById(hospitalInfo);
+        return Result.success(ResultCodeEnum.UPDATE_SUCCESS,null);
     }
 }
