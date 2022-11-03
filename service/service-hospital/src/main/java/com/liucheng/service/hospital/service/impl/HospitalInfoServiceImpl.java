@@ -1,9 +1,9 @@
-package com.liucheng.service.service.impl;
+package com.liucheng.service.hospital.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liucheng.model.entity.HospitalInfo;
-import com.liucheng.service.mapper.HospitalInfoMapper;
-import com.liucheng.service.service.HospitalInfoService;
+import com.liucheng.service.hospital.mapper.HospitalInfoMapper;
+import com.liucheng.service.hospital.service.HospitalInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

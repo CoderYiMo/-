@@ -1,4 +1,4 @@
-package com.liucheng.service.mapper;
+package com.liucheng.service.hospital.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.liucheng.model.entity.HospitalInfo;

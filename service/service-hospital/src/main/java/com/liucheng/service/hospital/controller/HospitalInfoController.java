@@ -1,4 +1,4 @@
-package com.liucheng.service.controller;
+package com.liucheng.service.hospital.controller;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.digest.MD5;
@@ -8,7 +8,7 @@ import com.liucheng.commonutil.result.Result;
 import com.liucheng.commonutil.result.ResultCodeEnum;
 import com.liucheng.model.entity.HospitalInfo;
 import com.liucheng.model.vo.HospitalInfoQueryVO;
-import com.liucheng.service.service.HospitalInfoService;
+import com.liucheng.service.hospital.service.HospitalInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;

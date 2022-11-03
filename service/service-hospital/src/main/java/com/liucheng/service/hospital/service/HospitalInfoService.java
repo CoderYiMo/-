@@ -1,4 +1,4 @@
-package com.liucheng.service.service;
+package com.liucheng.service.hospital.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.liucheng.model.entity.HospitalInfo;
