@@ -17,6 +17,7 @@ public enum ResultCodeEnum {
     PAGE_FIND_SUCCESS(204,"分页查询成功"),
     UPDATE_SUCCESS(205,"更新成功"),
     BATCH_REMOVE_SUCCESS(206,"批量删除成功"),
+    SEND_SHORT_MESSAGE_SUCCESS(207,"发送短信成功"),
 
     //失败
     FAILED(500,"失败"),

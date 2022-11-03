@@ -113,4 +113,16 @@ public class HospitalInfoController {
         hospitalInfoService.updateById(hospitalInfo);
         return Result.success(ResultCodeEnum.UPDATE_SUCCESS,null);
     }
+
+//    发送签名密钥
+    @PutMapping("sendSignKey/{id}")
+    public Result sendSignKey(@PathVariable Long id){
+        HospitalInfo hospitalInfo = hospitalInfoService.getById(id);
+        String signKey = hospitalInfo.getSignKey();
+        String hospitalCode = hospitalInfo.getHospitalCode();
+        /**
+         * 发送代码业务逻辑（待完成）
+         */
+        return Result.success(ResultCodeEnum.SEND_SHORT_MESSAGE_SUCCESS,null);
+    }
 }
